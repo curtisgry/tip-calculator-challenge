@@ -24,12 +24,21 @@ input[type=radio] {
     display: none;
 }
 
-input[type=text] {
+input[type=number] {
     border-style: none;
     background-color: hsl(189, 41%, 97%);
     padding: 3px;
     border-radius: 8px;
     margin-top: 0;
+   
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
 }
 
 .sub-text {

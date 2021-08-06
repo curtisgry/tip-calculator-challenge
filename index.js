@@ -14,13 +14,17 @@ const htmlElements = {
 function calculateTip() {
     let bill = parseFloat(inputs.bill.value);
     let people = parseInt(inputs.people.value);
+    let customInput = parseInt(inputs.custom.value)
     let tip = 0;
     let splitBill = 0;
     let splitTip = 0;
-    let percent = parseInt(document.querySelector('input[type=radio]:checked').value);
+    let percent;
+    if (document.querySelector('input[type=radio]:checked')) {
+        percent = parseInt(document.querySelector('input[type=radio]:checked').value);
+    }
 
-    if (inputs.custom.value) {
-        percent = inputs.custom.value;
+    if (customInput) {
+        percent = customInput
     }
 
     if (bill && people) {
@@ -70,7 +74,11 @@ inputs.reset.addEventListener('click', () => {
     htmlElements.fullTotal.innerText = `$0.00`;
 })
 
-inputs.custom.addEventListener('input', () => {
-    document.querySelector('input[type=radio]:checked').checked = false
-    renderData();
+inputs.custom.addEventListener('click', () => {
+    if (document.querySelector('input[type=radio]:checked').checked) {
+        document.querySelector('input[type=radio]:checked').checked = false;
+    }
+    inputs.custom.addEventListener('input', () => {
+        renderData();
+    })
 })
