@@ -19,12 +19,13 @@ function calculateTip() {
     let splitBill = 0;
     let splitTip = 0;
     let percent;
-    if (document.querySelector('input[type=radio]:checked')) {
-        percent = parseInt(document.querySelector('input[type=radio]:checked').value);
-    }
+
 
     if (customInput) {
         percent = customInput
+    }
+    if (document.querySelector('input[type=radio]:checked')) {
+        percent = parseInt(document.querySelector('input[type=radio]:checked').value);
     }
 
     if (bill && people) {
@@ -70,14 +71,18 @@ inputs.btns.forEach(button => {
 inputs.reset.addEventListener('click', () => {
     inputs.bill.value = '';
     inputs.people.value = '';
+    inputs.custom.value = '';
     htmlElements.tipTotal.innerText = `$0.00`;
     htmlElements.fullTotal.innerText = `$0.00`;
 })
 
 inputs.custom.addEventListener('click', () => {
+
     if (document.querySelector('input[type=radio]:checked').checked) {
         document.querySelector('input[type=radio]:checked').checked = false;
     }
+
+    renderData();
     inputs.custom.addEventListener('input', () => {
         renderData();
     })
