@@ -1,0 +1,130 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: hsl(185, 41%, 84%);
+    font-family: 'Space Mono', monospace;
+}
+
+img {
+    width: 20px;
+    position: relative;
+    top: 32px;
+    left: 5px;
+}
+
+input {
+    text-align: right;
+    height: 30px;
+    font-size: 25px;
+}
+
+input[type=radio] {
+    display: none;
+}
+
+input[type=text] {
+    border-style: none;
+    background-color: hsl(189, 41%, 97%);
+    padding: 3px;
+    border-radius: 8px;
+    margin-top: 0;
+}
+
+.sub-text {
+    margin-bottom: 0;
+}
+
+.percent {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: space-evenly;
+    height: 100px;
+    margin-bottom: 15px;
+}
+
+.btn {
+    background-color: hsl(172, 67%, 45%);
+    padding: 10px 0;
+    width: 75px;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 18px;
+}
+
+.btn-wide {
+    width: 100%;
+    border-style: none;
+}
+
+.btn:hover {
+    cursor: pointer;
+    background-color: hsl(183, 100%, 15%);
+    color: white;
+}
+input[type=radio]:checked + label{
+    background-color: hsl(183, 100%, 15%);
+    color: white;
+}
+
+#custom {
+    width: 70px;
+    height: 44px;
+    font-size: 14px;
+    text-align: center;
+    border-radius: 8px;
+    border-style: none;
+    background-color: hsl(185, 41%, 84%);
+}
+
+.container-main {
+    background-color: hsl(0, 0%, 100%);
+    width: 60%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 30px;
+    border-radius: 15px;
+}
+
+.column {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+
+.column-dark {
+    box-sizing: border-box;
+    background-color: hsl(183, 100%, 15%);
+    color: white;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 15px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.column-dark h2 {
+    color: hsl(172, 67%, 45%);
+}
+
+@media (max-width: 1000px) {
+    .container-main {
+        flex-direction: column;
+    }
+    .column {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .percent {
+        justify-content: space-evenly;
+    }
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Tip calculator app</title>
+
+</head>
+
+<body>
+
+  <div class="container-main">
+    <div class="column">
+      <label class="sub-text" for="bill">Bill</label>
+      <img src="images/icon-dollar.svg" alt="dollar sign icon">
+      <input id="bill" type="text" maxlength="6">
+      <p class="sub-text">Select Tip %</p>
+      <div class="percent">
+
+        <input id="5" type="radio" name="percent" value="5" checked>
+        <label class="btn" for="5">5%</label>
+
+        <input id="10" type="radio" name="percent" value="10">
+        <label class="btn" for="10">10%</label>
+
+        <input id="15" type="radio" name="percent" value="15">
+        <label class="btn" for="15">15%</label>
+
+        <input id="20" type="radio" name="percent" value="20">
+        <label class="btn" for="20">20%</label>
+
+        <input id="50" type="radio" name="percent" value="50">
+        <label class="btn" for="50">50%</label>
+        <input type="text" name="percent" id="custom" placeholder="Custom %">
+      </div>
+      <label class="sub-text" for="people">Number of People</label>
+      <img src="images/icon-person.svg" alt="person icon">
+      <input id="people" type="text" maxlength="2">
+    </div>
+    <div class="column column-dark">
+      <div class="row">
+        <div class="total-text">
+          <p class="sub-text">Tip Ammount</p>
+          <p class="fade-text">/person</p>
+        </div>
+        <div class="total tip">
+          <h2>$0.00</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="total-text">
+          <p class="sub-text">Total</p>
+          <p class="fade-text">/person</p>
+        </div>
+        <div class="total full-total">
+          <h2>$0.00</h2>
+        </div>
+      </div>
+      <div class="reset">
+        <button class="btn btn-wide reset">Reset</button>
+      </div>
+    </div>
+  </div>
+
+
+
+  <script src="index.js"></script>
+</body>
+
+</html>
