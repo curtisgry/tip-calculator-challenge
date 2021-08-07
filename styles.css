@@ -137,7 +137,7 @@ input[type="radio"]:checked + label {
     justify-content: space-evenly;
   }
 }
-/* Mobile */
+/* Mobile Device*/
 @media (max-width: 425px) {
   .container-main {
     width: 100%;
