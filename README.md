@@ -17,7 +17,7 @@ Users should be able to:
 
 
 ### Links
-- Live Site URL: [Add live site URL here](https://determined-pike-b95fcb.netlify.app/)
+- Live Site URL: [Here](https://determined-pike-b95fcb.netlify.app/)
 
 ### Built with
 
