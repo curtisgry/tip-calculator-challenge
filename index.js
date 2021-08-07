@@ -56,6 +56,14 @@ function renderData() {
     }
 }
 
+function resetDisplayValues() {
+    inputs.bill.value = '';
+    inputs.people.value = '';
+    inputs.custom.value = '';
+    htmlElements.tipTotal.innerText = `$0.00`;
+    htmlElements.fullTotal.innerText = `$0.00`;
+}
+
 inputs.bill.addEventListener('input', () => {
     renderData();
 })
@@ -69,11 +77,7 @@ inputs.btns.forEach(button => {
     })
 })
 inputs.reset.addEventListener('click', () => {
-    inputs.bill.value = '';
-    inputs.people.value = '';
-    inputs.custom.value = '';
-    htmlElements.tipTotal.innerText = `$0.00`;
-    htmlElements.fullTotal.innerText = `$0.00`;
+    resetDisplayValues();
 })
 
 inputs.custom.addEventListener('click', () => {
