@@ -1,3 +1,4 @@
+// Tried storing all input related elements in an object instead of declaring multiple global variables
 const inputs = {
     bill: document.querySelector('#bill'),
     people: document.querySelector('#people'),
@@ -5,12 +6,13 @@ const inputs = {
     reset: document.querySelector('.reset'),
     custom: document.querySelector('#custom')
 }
-
+// Same as above with some HTML that would need to be updated 
 const htmlElements = {
     tipTotal: document.querySelector('.tip h2'),
     fullTotal: document.querySelector('.full-total h2')
 }
 
+// All of the functionality to proccess the inputs and return an object with calculated values
 function calculateTip() {
     let bill = parseFloat(inputs.bill.value);
     let people = parseInt(inputs.people.value);
@@ -20,21 +22,22 @@ function calculateTip() {
     let splitTip = 0;
     let percent;
 
-
+// Update percent value when a custom input is used
     if (customInput) {
         percent = customInput
     }
+// Get value from pre-defined percent radios
     if (document.querySelector('input[type=radio]:checked')) {
         percent = parseInt(document.querySelector('input[type=radio]:checked').value);
     }
-
+// Calculate the tip and bill
     if (bill && people) {
         tip = bill * (percent / 100);
         bill += tip;
         splitBill = bill / people;
         splitTip = tip / people;
     }
-
+// Object with calculated values. Not all values used later but added them for flexebility.
     return {
         tip: tip.toFixed(2),
         total: bill.toFixed(2),
@@ -45,6 +48,7 @@ function calculateTip() {
     }
 }
 
+// Updates HTML with calculated data
 function renderData() {
     const calculatedData = calculateTip();
     if (calculatedData.bill && calculatedData.people) {
@@ -55,7 +59,7 @@ function renderData() {
         htmlElements.fullTotal.innerText = `$0.00`;
     }
 }
-
+// A function to call to force reset of all HTML values
 function resetDisplayValues() {
     inputs.bill.value = '';
     inputs.people.value = '';
@@ -64,6 +68,8 @@ function resetDisplayValues() {
     htmlElements.fullTotal.innerText = `$0.00`;
 }
 
+
+// Event Listeners
 inputs.bill.addEventListener('input', () => {
     renderData();
 })
