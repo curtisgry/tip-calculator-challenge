@@ -53,6 +53,30 @@ input[type="number"]::-webkit-inner-spin-button {
   margin-bottom: 15px;
 }
 
+#custom::placeholder {
+  color: black;
+}
+
+#custom:hover::placeholder {
+  color: white;
+}
+
+#custom:hover {
+  cursor: pointer;
+  background-color: hsl(183, 100%, 15%);
+  color: white;
+}
+
+#custom:focus {
+  cursor: pointer;
+  background-color: hsl(183, 100%, 15%);
+  color: white;
+}
+
+#custom:focus::placeholder {
+  color: white;
+}
+
 .btn {
   background-color: hsl(172, 67%, 45%);
   padding: 10px 0;
@@ -72,6 +96,11 @@ input[type="number"]::-webkit-inner-spin-button {
   background-color: hsl(183, 100%, 15%);
   color: white;
 }
+
+.reset:hover {
+  background-color: hsl(184, 14%, 56%);
+  border-radius: 8px;
+}
 input[type="radio"]:checked + label {
   background-color: hsl(183, 100%, 15%);
   color: white;
@@ -84,7 +113,7 @@ input[type="radio"]:checked + label {
   text-align: center;
   border-radius: 8px;
   border-style: none;
-  background-color: hsl(185, 41%, 84%);
+  background-color: hsl(172, 67%, 45%);
 }
 
 .container-main {
